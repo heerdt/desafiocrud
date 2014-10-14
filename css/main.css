@@ -1,0 +1,15 @@
+table { text-align: left; }
+input.ng-invalid.ng-invalid, select.ng-invalid.ng-invalid { background-color: #ffaaaa; }
+.error-message { color: #F00; margin-top: 10px; }
+input.ng-valid.ng-dirty { background-color: #78FA89; }
+
+#placa { text-transform: uppercase; }
+
+.site-wrapper-inner { vertical-align: top; display: block; }
+.voltar { text-align: right; }
+
+@media screen and (min-width: 770px) {
+	
+	.masthead  { position: absolute;}
+	.cover { margin-top: 100px; }
+}

@@ -1,0 +1,85 @@
+<h1>Novo/Editar</h1>
+<nav-voltar></nav-voltar>
+<form class="form-horizontal" role="form"name="form"  ng-submit="save()" novalidate >
+    <div class="form-group">
+        <label for="placa" class="col-sm-2 control-label" >Placa</label>
+        <div class="col-sm-10">
+            <input type="text" ng-model="veiculo.placa" ng-minlength="7" ng-maxlength="7" maxlength="7" required ng-pattern="/^[a-zA-Z]{3}[0-9]{4}$/" class="form-control" id="placa" placeholder="Placa (ex: MMC0000)" ng-blur="veiculo.placa = veiculo.placa.toUpperCase()" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="marca" class="col-sm-2 control-label">Marca</label>
+        <div class="col-sm-10">
+            <select  ng-model="veiculo.marca" required class="form-control" id="marca" placeholder="Marca">
+                <option value="">Selecione a marca...</option>
+                <option value="Audi">Audi</option>
+                <option value="BMW">BMW</option>
+                <option value="Chery">Chery</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Chrysler">Chrysler</option>
+                <option value="Citroen">Citroen</option>
+                <option value="Dodge">Dodge</option>
+                <option value="Ferrari">Ferrari</option>
+                <option value="Fiat">Fiat</option>
+                <option value="Ford">Ford</option>
+                <option value="Honda">Honda</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Jac Motors">Jac Motors</option>
+                <option value="Jaguar">Jaguar</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Kia">Kia</option>
+                <option value="Land Rover">Land Rover</option>
+                <option value="Lifan">Lifan</option>
+                <option value="Lamborghini">Lamborghini</option>
+                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Peugeot">Peugeot</option>
+                <option value="Renault">Renault</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Volvo">Volvo</option>
+                <!-- <option value="Volkswagem">Volkswagem</option> -->
+                <!-- <option value="Renault">Renault</option> -->
+                <!-- <option value="Fiat">Fiat</option> -->
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="year" class="col-sm-2 control-label">Modelo</label>
+        <div class="col-sm-10">
+            <input type="text" ng-model="veiculo.modelo" required class="form-control" id="year" placeholder="Modelo"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="director" class="col-sm-2 control-label">Combustível</label>
+        <div class="col-sm-10">
+            <select ng-model="veiculo.combustivel"  class="form-control" id="combustivel">
+                <option value="">Selecione um combustível...</option>
+                <option value="Flex">Flex</option>
+                <option value="Alcool">Álcool</option>
+                <option value="Gasolina">Gasolina</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="plot" class="col-sm-2 control-label">Cor</label>
+        <div class="col-sm-10">
+            <input type="text" ng-model="veiculo.cor" required class="form-control" id="plot" placeholder="Cor"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="plot" class="col-sm-2 control-label">Imagem</label>
+        <div class="col-sm-10">
+            <input type="url" ng-model="veiculo.imagem" class="form-control" id="plot" placeholder="Imagem"/>
+            <img ng-model="veiculo.imagem" src="{{veiculo.imagem}}" ng-show="veiculo.imagem" alt="" height="100px">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" ng-disabled="form.$invalid || isUnchanged(veiculo)" class="btn btn-primary" value="Save"/>
+            <!-- <p class="error-message" ng-show="form.$invalid || isUnchanged(veiculo)">As informações não estão preenchidas corretamente.</p> -->
+        </div>
+    </div>
+</form>

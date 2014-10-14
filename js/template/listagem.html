@@ -1,0 +1,49 @@
+<h1>Listagem</h1>
+
+<div class="form-group">
+<input ng-model="searchText" class="form-control" placeholder="Filtre por Marca/Cor">
+</div>
+<table class="table table-condensed  ">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Placa</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Cor</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="list in listagem.list">
+            <td><a href="#/visualizar/{{ list.placa }}"><img ng-src="{{ list.imagem ? list.imagem : '/img/'+list.marca+'.png' }}" alt="" width="40" height="40"></a></td>
+            <td><a href="#/visualizar/{{ list.placa }}">{{ list.placa }}</a></td>
+            <td><a href="#/visualizar/{{ list.placa }}">{{ list.marca }}</a></td>
+            <td> {{ list.modelo }}</td>
+            <td>{{ list.cor }}</td>
+            <td width="180">
+                <a href="#/visualizar/{{ list.placa }}" class="btn btn-info btn-xs">Visualizar</a>
+                <a href="#/editar/{{ list.placa }}" class="btn btn-primary btn-xs">Editar</a>
+                <button ng-click="delete(list.placa)" class="btn btn-danger btn-xs">Excluir</button>
+            </td>
+        </tr>
+        <tr ng-hide="listagem.total > 0">
+            <td colspan="6">Nenhum veículo cadastrado</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">
+                Total: {{ listagem.total }}
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<div class="btn-group" data-toggle="buttons">
+  <a href="#/page/{{listagem.prev}}" class="btn btn-primary btn-xs" ng-disabled="!listagem.showPrev">
+    Página Anterior
+  </a>
+  <a href="#/page/{{listagem.next}}" class="btn btn-primary btn-xs" ng-disabled="!listagem.showNext">
+    Próxima Página
+  </a>
+</div>

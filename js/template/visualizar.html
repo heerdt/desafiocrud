@@ -1,0 +1,35 @@
+<h1>Visualizar</h1>
+<nav-voltar></nav-voltar>
+<table class="table">
+	<tr>
+		<th>Placa:</th>
+		<td>{{veiculo.placa}}</td>
+	</tr>
+
+
+	<tr>
+		<th>Marca:</th>
+		<td>{{veiculo.marca}}</td>
+	</tr>
+
+	<tr>
+		<th>Modelo:</th>
+		<td>{{veiculo.modelo}}</td>
+	</tr>
+
+	<tr>
+		<th>Combustível:</th>
+		<td>{{veiculo.combustivel}}</td>
+	</tr>
+	<tr>
+		<th>Cor:</th>
+		<td>{{veiculo.cor}}</td>
+	</tr>
+	<tr>
+		<th>Imagem:</th>
+		<td>
+			<img ng-src="{{ veiculo.imagem ? veiculo.imagem : '/img/'+veiculo.marca+'.png' }}" alt="{{veiculo.placa}}">
+		</td>
+	</tr>
+
+</table>
